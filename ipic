@@ -10,7 +10,7 @@ import subprocess
 myDir = os.environ['HOME'] + '/Desktop/'    # directory for HTML file
 browser = 'com.apple.Safari'                # browser bundle identifier
 
-usage = '''Usage: ipic (-i | -m | -a | -f | -t | -b | -u | -h) SEARCHTERM
+usage = '''Usage: ipic (-i | -m | -a | -f | -t | -b | -n | -h) SEARCHTERM
   
 Generate and open a web page of thumbnail images and links to larger images
 for items in the iTunes/App/Mac App Stores.
@@ -19,10 +19,10 @@ Options:
   -i      iOS app
   -m      Mac app
   -a      album
-  -f      film
+  -f      movie (film)
   -t      TV show
   -b      book
-  -u      audiobook
+  -n      audiobook (narration)
   -h      show this help message
 
 Only one option is allowed. The HTML file for the generated web page is
@@ -61,7 +61,7 @@ elif args['-b']:
   media = 'ebook'
   entity = 'ebook'
   name = 'trackName'
-elif args['-u']:
+elif args['-n']:
   size = 600
   media = 'audiobook'
   entity = 'audiobook'
